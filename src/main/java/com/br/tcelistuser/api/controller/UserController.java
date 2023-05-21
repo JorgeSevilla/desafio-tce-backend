@@ -2,6 +2,7 @@ package com.br.tcelistuser.api.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +29,10 @@ public class UserController {
     @GetMapping("/search")
     public List<User> searchUsers(@RequestParam String query){
         return userRepository.searchByQueryIgnoreCase(query);
+    }
+
+    public ResponseEntity<User> getUserById(long l) {
+        return null;
     }
     
 }
